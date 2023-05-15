@@ -1,11 +1,11 @@
 
-<nav class="nav">
+<!-- <nav class="nav justify-content-center">
   <a class="nav-link active" aria-current="page" href="#">Diario</a>
   <a class="nav-link" href="#">Iimitado</a>
   <a class="nav-link" href="#">Clasificación</a>
 
 
-  Logooooooooooooooooooooooooooooo
+  <img src="assets/logoFondoBlanco.png" alt="logoFondoBlanco">
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Inicio sesión</a>
@@ -14,7 +14,35 @@
       <a class="nav-link" href="#">Registrarse</a>
     </li>
   </ul>
+</nav> -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['diario']" routerLinkActive="active" href="#">Diario</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" [routerLink]="['ilimitado']" routerLinkActive="active" href="#">Ilimitado</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" [routerLink]="['clasificacion']" routerLinkActive="active" href="#">Clasificación</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <img src="assets/100x300logoFondoBlanco.png" alt="logoFondoBlanco">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Inicio sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Registrarse</a>
+      </li>
+    </ul>
+  </div>
 </nav>
+
+
 
 
 
