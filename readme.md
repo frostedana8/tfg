@@ -1,9 +1,9 @@
-#TFG Adivina la Película
+# TFG Adivina la Película
 
-##Autores:
+## Autores:
 Ana Cámara Marco y Olga Mandel
 
-##Profesora coordinadora:
+## Profesora coordinadora:
 María del Carmen Martínez Sánchez
 
-Esta obra está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional.
+Esta obra está bajo una licencia de Creative Commons Attribution-ShareAlike 4.0 Internacional.
