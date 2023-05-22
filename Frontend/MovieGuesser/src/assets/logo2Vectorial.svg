@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="450mm"
+   height="109.99999mm"
+   viewBox="0 0 450 109.99999"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="logoConInkscapeVectorial.svg"
+   inkscape:export-xdpi="9.4074078"
+   inkscape:export-ydpi="9.4074078"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs2">
+    <rect
+       x="19.306234"
+       y="30.338369"
+       width="1657.5782"
+       height="366.81848"
+       id="rect246" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.92429473,0,0,1.6372998,-15.036354,-60.072309)"
+       id="text244"
+       style="font-size:72px;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect246);opacity:0.6621;fill:#000000;stroke:#000000;stroke-width:1.00157;stroke-opacity:0.521569"><tspan
+         x="19.306641"
+         y="95.848904"
+         id="tspan1609"><tspan
+           style="opacity:1;stroke-opacity:1"
+           id="tspan1607">MovieGuesser</tspan></tspan></text>
+  </g>
+</svg>
