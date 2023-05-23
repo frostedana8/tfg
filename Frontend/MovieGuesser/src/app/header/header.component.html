@@ -16,34 +16,51 @@
   </ul>
 </nav> -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
-  <div class="container-fluid" style="width: 60%; background-color: #d9d9d9;">
-    <a class="navbar-brand" [routerLink]="['diario']" routerLinkActive="active" href="#">Diario</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" [routerLink]="['ilimitado']" routerLinkActive="active" href="#">Ilimitado</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" [routerLink]="['clasificacion']" routerLinkActive="active" href="#">Clasificación</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="row">
+  
+  <div class="col-4">
+    <div class="row">
+      <div class="col-3">
+        <a class="navbar-brand" style="font-size: auto" [routerLink]="['diario']" routerLinkActive="active" href="#">Diario</a>
+      </div>
 
-    <!-- <img src="assets/100x300logoFondoBlanco.png" alt="logoFondoBlanco"> -->
+      <div class="col-4">
+        <a class="navbar-brand" style="font-size: auto" [routerLink]="['ilimitado']" routerLinkActive="active" href="#">Ilimitado</a>
+      </div>
 
-    <h2>MovieGuesser</h2>
-<!--     <ul class="nav nav-pills nav-fill">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Inicio sesión</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Registrarse</a>
-      </li>
-    </ul> -->
-    <button type="button" class="btn btn-primary nav-link active" href="#" >Inicio sesión</button>
-    <button type="button" class="btn btn-primary nav-link" href="#">Registrarse</button>
+      <div class="col-5">
+        <a class="navbar-brand" style="font-size: auto" [routerLink]="['clasificacion']" routerLinkActive="active" href="#">Clasificación</a>
+      </div>
+    </div>
+        
   </div>
+      
+      
+      <!-- <img src="assets/100x300logoFondoBlanco.png" alt="logoFondoBlanco"> -->
+      <div class="col-4">
+
+        <h2>MovieGuesser</h2>
+      </div>
+      <!--     <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Registrarse</a>
+        </li>
+      </ul> -->
+      
+      <div class="col-4">
+        <button type="button" class="btn btn-primary nav-link active" href="#">Inicio sesión<button>
+          
+          <button type="button" class="btn btn-primary nav-link"  ref="#">Registrarse</button>
+        </button>
+        </button>
+      </div>
+    
+    
+  </div>
+  
 </nav>
 
 
