@@ -1,0 +1,15 @@
+button{
+  width: 20%;
+  color: black;
+  font-size: 20px;
+  border-left: 3px solid black;
+  border-radius: 0px 15px 15px 0px;
+}
+.input-group.mb-3{
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 17px;
+}
+input{
+  border-radius: 15px;
+}

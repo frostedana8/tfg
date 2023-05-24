@@ -1,0 +1,20 @@
+.row{
+  padding: 5%;
+
+
+}
+.card-header{
+  background-color: black;
+  color: white;
+  font-size: large;
+}
+
+.card{
+  margin: 5%;
+  background-color: black;
+  align-items: center;
+}
+.list-group.list-group-flush{
+  width: 105%;
+  margin-bottom: 2px;
+}
