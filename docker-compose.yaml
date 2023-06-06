@@ -14,7 +14,7 @@ services:
   frontend:
     image: movieguesser
     container_name: frontend
-    build: ./frontend
+    build: ./Frontend
     restart: always
     ports:
       - 8080:80
