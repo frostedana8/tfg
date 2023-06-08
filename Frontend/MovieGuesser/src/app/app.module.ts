@@ -13,6 +13,8 @@ import { RegistroComponent } from './pagina/registro/registro.component';
 import { PerfilComponent } from './pagina/perfil/perfil.component';
 import { PanelAdminComponent } from './pagina/panel-admin/panel-admin.component';
 import { Error404Component } from './error404/error404.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TarjetaResultadosComponent } from './tarjeta-resultados/tarjeta-resultados.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { Error404Component } from './error404/error404.component';
     RegistroComponent,
     PerfilComponent,
     PanelAdminComponent,
-    Error404Component
+    Error404Component,
+    TarjetaResultadosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
