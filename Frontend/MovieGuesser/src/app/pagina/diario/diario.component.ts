@@ -11,12 +11,12 @@ export class DiarioComponent {
   public pelis:any;
 
   constructor(private baseDatosPeliculas:BaseDatosPeliculasService){
-    this.pelis = this.baseDatosPeliculas.getPelis();
+    //this.pelis = this.baseDatosPeliculas.getPelis();
   };
 
   //Aqui recojo del servivio las peliculas
-  getPelis(){
+/*   getPelis(){
     this.pelis = this.baseDatosPeliculas.getPelis();
-  };
+  }; */
 
 }

@@ -6,18 +6,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BaseDatosPeliculasService {
 
-  private url:string="http://www.omdbapi.com/?i=tt3896198&apikey=feec4bd5";
-  //ejemplo completo "https://api.themoviedb.org/3/movie/550?api_key=ca2b543af7547a28bb9fa0241afb21f1"
-  //private url:string="https://api.themoviedb.org/3/movie/550?api_key=ca2b543af7547a28bb9fa0241afb21f1";
-  //private apiKey="ca2b543af7547a28bb9fa0241afb21f1";
+  //private url:string="http://www.omdbapi.com/?i=tt3896198&apikey=feec4bd5";
+
+  //http://www.omdbapi.com/?i=tt0332452&apikey=feec4bd5  tt0332452
+  private url:string="http://www.omdbapi.com";
+  private apiKey:string="&apikey=feec4bd5";
   private pelis:any;
 
   constructor(private http:HttpClient) {
-    this.http.get(this.url).subscribe( (respuesta:any)=>{
-      this.pelis=respuesta;
-      console.log(this.pelis);
-    })
+
   }
 
-  getPelis(){return this.pelis};
+/*   getBusqueda(busqueda:string):Array<any>{
+    this.http.get(this.url+"/?=tt"+busqueda+this.apiKey).subscribe( (data:any)=>{
+      this.pelis=data.list;
+      console.log(this.pelis);
+    })
+    return this.pelis
+  } */
+
+
+  //getPelis(){return this.pelis};
 }
