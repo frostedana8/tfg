@@ -15,6 +15,7 @@ import { PanelAdminComponent } from './pagina/panel-admin/panel-admin.component'
 import { Error404Component } from './error404/error404.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TarjetaResultadosComponent } from './tarjeta-resultados/tarjeta-resultados.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TarjetaResultadosComponent } from './tarjeta-resultados/tarjeta-resulta
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

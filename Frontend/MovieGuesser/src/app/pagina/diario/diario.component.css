@@ -4,12 +4,27 @@ button{
   font-size: 20px;
   border-left: 3px solid black;
   border-radius: 0px 15px 15px 0px;
+  background-color: #70BFF9;
 }
+
 .input-group.mb-3{
+  width: 100%;
+}
+
+/* .input-group.mb-3{
   width: 100%;
   border: 3px solid black;
   border-radius: 17px;
-}
+} */
 input{
   border-radius: 15px;
+  width: 45%;
+}
+
+.green {
+  background-color: #c4ffc4;
+}
+
+.red {
+  background-color: #ffcccc;
 }
