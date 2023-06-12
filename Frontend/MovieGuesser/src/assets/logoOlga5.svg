@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="173.93564mm"
+   height="37.360142mm"
+   viewBox="0 0 173.93564 37.360142"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="logoOlga4.svg"
+   inkscape:export-xdpi="54.389515"
+   inkscape:export-ydpi="54.389515"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title4899">logo</title>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     borderlayer="true"
+     showborder="true" />
+  <defs
+     id="defs2">
+    <rect
+       x="135.14365"
+       y="170.99808"
+       width="406.80997"
+       height="81.361992"
+       id="rect236" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+     transform="matrix(1.0459238,0,0,1.1462656,-18.739433,-12.418488)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.4262106,0,0,0.67104389,-42.048944,-111.08194)"
+       id="text234"
+       style="font-size:64px;font-family:sans-serif;-inkscape-font-specification:sans-serif;white-space:pre;shape-inside:url(#rect236);fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.00157;stroke-opacity:1"><tspan
+         x="135.14453"
+         y="229.23006"
+         id="tspan6162">MovieGueser</tspan></text>
+  </g>
+  <metadata
+     id="metadata4897">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
+        <dc:title>logo</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>olgamandel</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

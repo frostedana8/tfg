@@ -1,3 +1,11 @@
+@media (min-width: 992px) {
+  .logo {
+    display: flex;
+
+    justify-content: center;
+  }
+}
+
 
 .navbar.navbar-expand-lg.navbar-light{
   background-color: #D9D9D9;
@@ -28,6 +36,14 @@ button{
   color: #000; /* Cambia el color del texto a tu preferencia */
   text-decoration: none; /* Elimina el subrayado */
 }
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 /* .collapse.navbar-collapse{
   display: flex;

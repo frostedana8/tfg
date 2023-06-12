@@ -9,6 +9,16 @@ button{
 
 .input-group.mb-3{
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.row{
+  display: flex;
+  justify-content: center;
 }
 
 /* .input-group.mb-3{
