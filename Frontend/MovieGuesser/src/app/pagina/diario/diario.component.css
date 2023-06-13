@@ -1,3 +1,11 @@
+.color-rojo{
+  background-color: red;
+}
+
+.color-verde{
+  background-color: green;
+}
+
 button{
   width: 20%;
   color: black;

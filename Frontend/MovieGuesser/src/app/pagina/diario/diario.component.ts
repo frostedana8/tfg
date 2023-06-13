@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service';
 //import { FormsModule } from '@angular/forms';
 
-interface Pelicula {
-  titulo: string;
-  anio: string;
-  genero: string;
-  director: string;
-  actores: string;
-}
 
 @Component({
   selector: 'app-diario',
@@ -16,58 +9,63 @@ interface Pelicula {
   styleUrls: ['./diario.component.css']
 })
 export class DiarioComponent {
-  tituloIntroducido: string;
-  adivinado: boolean = false;
-  coincideAnio: boolean;
-  coincideGenero: boolean;
-  coincideDirector: boolean;
-  coincideActores: boolean;
-  pelicula: Pelicula = {
-    titulo: 'Titanic',
-    anio: 'Año',
-    genero: 'Genero',
-    director: 'Director',
-    actores: 'Actores'
-  };
 
-  constructor() {
-    this.tituloIntroducido = '';
-    this.coincideAnio = false;
-    this.coincideGenero = false;
-    this.coincideDirector = false;
-    this.coincideActores = false;
+  private peliculaUsuario:any;
+  private peliculaDelDia: any;
 
+  //hago la conexion con el servicio
+  constructor(private baseDatos:BaseDatosPeliculasService) {}
+
+  getBusquedaPeliculaUsuario(busqueda:string):Array<any>{
+    this.peliculaUsuario=this.baseDatos.getBusquedaPeliculaUsuario(busqueda)
+    return this.peliculaUsuario
   }
-  verificarTitulo() {
-    if (this.tituloIntroducido === this.pelicula.titulo) {
-      this.adivinado = true;
-    } else {
-      this.coincideAnio = this.tituloIntroducido === this.pelicula.anio;
-      this.coincideGenero = this.tituloIntroducido === this.pelicula.genero;
-      this.coincideDirector = this.tituloIntroducido === this.pelicula.director;
-      this.coincideActores = this.tituloIntroducido === this.pelicula.actores;
+
+  getPeliculaUsuario(){
+    return this.baseDatos.getPeliculaUsuario()
+  }
+
+  //la pelicula del dia
+  getPeliculaDelDia(){
+    return this.baseDatos.getPeliculaDelDia()
+  }
+
+
+  coincideGenero(): boolean {
+    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+      return false;
     }
+    return (
+      this.peliculaUsuario.Genre === this.peliculaDelDia.Genre
+    );
   }
-  //pelis:any[];
 
-  //PRACTICAR creo un objeto pelicula con estos campos para practicar
-/*   peliculas = [
-    { titulo: 'Titanic', año: 1997, genero: 'Drama/Romance', director: 'James Cameron', actores: 'Leonardo DiCaprio, Kate Winslet' },
-    { titulo: 'El Padrino', año: 1972, genero: 'Crimen/Drama', director: 'Francis Ford Coppola', actores: 'Marlon Brando, Al Pacino' },
-    { titulo: 'Pulp Fiction', año: 1994, genero: 'Crimen/Drama', director: 'Quentin Tarantino', actores: 'John Travolta, Uma Thurman' },
-  ]; */
+  coincideAnio(): boolean {
+    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+      return false;
+    }
+    return (
+      this.peliculaUsuario.Year === this.peliculaDelDia.Year
+    );
+  }
 
-  //constructor(private baseDatosPeliculas:BaseDatosPeliculasService){
-    //this.pelis = this.baseDatosPeliculas.getPelis();
-  //};
+  coincideActores(): boolean {
+    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+      return false;
+    }
+    return (
+      this.peliculaUsuario.Actors === this.peliculaDelDia.Actors
+    );
+  }
 
-  //Aqui recojo del servicio las peliculas
-  //getPelis(){
-    //console.log(this.baseDatosPeliculas.getPelis())
-    // this.baseDatosPeliculas.getPelis();
-  //};
-
-
+  coincideDirector(): boolean {
+    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+      return false;
+    }
+    return (
+      this.peliculaUsuario.Director === this.peliculaDelDia.Director
+    );
+  }
 }
   //PRACTICAR
 

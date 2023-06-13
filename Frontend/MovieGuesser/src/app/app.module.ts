@@ -16,6 +16,7 @@ import { Error404Component } from './error404/error404.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TarjetaResultadosComponent } from './tarjeta-resultados/tarjeta-resultados.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

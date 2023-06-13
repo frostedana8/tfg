@@ -5,36 +5,35 @@
 
   <div class="row">
     <div class="input-group mb-3">
-      <input type="text" id="inputTituloIntroducido" [(ngModel)]="tituloIntroducido">
-      <button (click)="verificarTitulo()">Adivinar</button>
+      <input type="text" #busqueda (keyup.enter)="getBusquedaPeliculaUsuario(busqueda.value)">
+      <button>Adivinar</button>
     </div>
   </div>
 
-  <div *ngIf="adivinado" class="row">
-    <p>¡Has adivinado la película!</p>
-  </div>
+  <table class="table table-bordered">
 
-  <div *ngIf="tituloIntroducido">
-    <table *ngIf="!adivinado">
-      <thead>
-        <tr>
-          <th>Año</th>
-          <th>Género</th>
-          <th>Director</th>
-          <th>Actores</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td [style.background-color]="coincideAnio ? 'green' : 'red'">{{ pelicula.anio }}</td>
-          <td [style.background-color]="coincideGenero ? 'green' : 'red'">{{ pelicula.genero }}</td>
-          <td [style.background-color]="coincideDirector ? 'green' : 'red'">{{ pelicula.director }}</td>
-          <td [style.background-color]="coincideActores ? 'green' : 'red'">{{ pelicula.actores }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <tbody *ngIf="getPeliculaUsuario()">
+      <tr>
+        <td [ngClass]="{'color-verde': coincideGenero(), 'color-rojo': !coincideGenero()}">{{ getPeliculaUsuario()?.Genre }}</td>
+        <td [ngClass]="{'color-verde': coincideAnio(), 'color-rojo': !coincideAnio()}">{{ getPeliculaUsuario()?.Year }}</td>
+        <td [ngClass]="{'color-verde': coincideActores(), 'color-rojo': !coincideActores()}">{{ getPeliculaUsuario()?.Actors }}</td>
+        <td [ngClass]="{'color-verde': coincideDirector(), 'color-rojo': !coincideDirector()}">{{ getPeliculaUsuario()?.Director }}</td>
+      </tr>
+    </tbody>
+  </table>
+<br><br><br>
 </div>
+
+<!--   <div *ngIf="getPeliculaUsuario()">
+    <p>Genre: {{ getPeliculaUsuario()?.Genre }}</p>
+    <p>Year: {{ getPeliculaUsuario()?.Year }}</p>
+    <p>Actors: {{ getPeliculaUsuario()?.Actors }}</p>
+    <p>Director: {{ getPeliculaUsuario()?.Director }}</p>
+  </div> -->
+
+
+<!-- <app-tarjeta-resultados *ngFor="let resultado of getPeliculaUsuario() | keyvalue" [tarjeta]="resultado"></app-tarjeta-resultados> -->
+
 
 <!-- <div class="container text-center" style="height: 500px;">
   <br>

@@ -1,58 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseDatosPeliculasService {
 
-  //private url:string="http://www.omdbapi.com/?i=tt3896198&apikey=feec4bd5";
-
-  //http://www.omdbapi.com/?i=tt0332452&apikey=feec4bd5  tt0332452
   private url:string="http://www.omdbapi.com";
   private apiKey:string="&apikey=feec4bd5";
-  private peli:any;
 
 
-  //solo para las pruebas
-  private pruebaPeli:string="http://www.omdbapi.com/?i=tt0332452&apikey=feec4bd5"
-  private pruebaResultadoPeli:any;
+  //la busqueda de la url para la pelicula de hoy, de titanic
+  private url2:string="http://www.omdbapi.com/?t=titanic&apikey=feec4bd5";
 
-
-  private urlUsuario:string=""
+  //la pelicula del dia
+  private peliculaDelDia: any;
+  private peliculaUsuario: any;
 
   constructor(private http:HttpClient) {
-
-
-    //solo para las pruebas
-    this.http.get(this.pruebaPeli).subscribe( (respuesta:any)=> {
-      this.pruebaResultadoPeli = respuesta
-
+    this.http.get(this.url2).subscribe( (respuesta:any)=> {
+      this.peliculaDelDia=respuesta
+      console.log(this.peliculaDelDia)
     })
   }
 
-
-  BuscarPeliculaPorNombre(tituloPeli:string) {
-    this.http.get(this.url)
+  getPeliculaDelDia(){
+    return this.peliculaDelDia
   }
 
-  getPelis(){
-    console.log(this.pruebaResultadoPeli)
-    return this.pruebaResultadoPeli}
+  //esta es una funcion que tiene como parametro el valor/titulo introducido por el usuario
+  //es un get que retorna los datos de la pelicula introducido por el usuario
+  getBusquedaPeliculaUsuario(busqueda:string):Observable<any>{
 
-  //esta es la final/la buena
-/*   getNumeroPeli(numero:string):Array<any>{
-    this.http.get(this.url+"/?=tt"+numero+this.apiKey).subscribe( (data:any)=>{
-      this.peli=data;
-      console.log(this.peli);
-    })
-    return this.peli
-  }; */
+    this.http.get(this.url+"/?t="+ busqueda +this.apiKey).subscribe(
+      (data:any)=> {
+        this.peliculaUsuario = data
+        console.log(this.peliculaUsuario)
+      }
+    )
+    return this.peliculaUsuario
+  }
 
+  //si quiero enviar los datos al hijo tengo que hacer un get
+  getPeliculaUsuario(){return this.peliculaUsuario}
 
-
-
-
-
-  //getPelis(){return this.pelis};
 }
