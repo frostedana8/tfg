@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="793.70081"
+   height="1122.5197"
+   viewBox="0 0 210.00001 296.99999"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="12.411151"
+       y="8.2741013"
+       width="477.1398"
+       height="77.224945"
+       id="rect236" />
+  </defs>
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,1.4594595,1.8243243)"
+       id="text234"
+       style="font-size:64px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:2.94px;white-space:pre;shape-inside:url(#rect236);fill:#000000;stroke:#000000;stroke-width:1.00157"><tspan
+         x="12.412109"
+         y="66.505449"
+         id="tspan425">MovieGuesser</tspan></text>
+  </g>
+</svg>
