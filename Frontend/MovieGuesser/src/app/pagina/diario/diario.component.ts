@@ -10,61 +10,65 @@ import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service'
 })
 export class DiarioComponent {
 
-  private peliculaUsuario:any;
+  protected peliculaUsuario:any;
   private peliculaDelDia: any;
 
   //hago la conexion con el servicio
-  constructor(private baseDatos:BaseDatosPeliculasService) {}
-
-  getBusquedaPeliculaUsuario(busqueda:string):Array<any>{
-    this.peliculaUsuario=this.baseDatos.getBusquedaPeliculaUsuario(busqueda)
-    return this.peliculaUsuario
+  constructor(private baseDatos:BaseDatosPeliculasService) {
+    this.peliculaUsuario = []
   }
 
-  getPeliculaUsuario(){
-    return this.baseDatos.getPeliculaUsuario()
+  getBusquedaPeliculaUsuario(busqueda:any) {
+
+    if (!this.peliculaDelDia) {
+      this.getPeliculaDelDia()
+    }
+
+    this.baseDatos.getBusquedaPeliculaUsuario(busqueda.value).then((response) => {
+      this.peliculaUsuario.push(response)
+    });
+
+    busqueda.value = ""
+
   }
 
   //la pelicula del dia
   getPeliculaDelDia(){
-    return this.baseDatos.getPeliculaDelDia()
+    this.peliculaDelDia = this.baseDatos.getPeliculaDelDia()
   }
 
 
-  coincideGenero(): boolean {
-    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+  coincideGenero(pelicula: any): boolean {
+    if (!pelicula || !this.peliculaDelDia) {
       return false;
     }
     return (
-      this.peliculaUsuario.Genre === this.peliculaDelDia.Genre
+      pelicula.Genre === this.peliculaDelDia.Genre
     );
   }
 
-  coincideAnio(): boolean {
-    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+  coincideAnio(pelicula: any): boolean {
+    if (!pelicula || !this.peliculaDelDia) {
       return false;
     }
     return (
-      this.peliculaUsuario.Year === this.peliculaDelDia.Year
+      pelicula.Year === this.peliculaDelDia.Year
     );
   }
 
-  coincideActores(): boolean {
-    if (!this.peliculaUsuario || !this.peliculaDelDia) {
+  coincideActores(pelicula: any): boolean {
+    if (!pelicula || !this.peliculaDelDia) {
       return false;
     }
     return (
-      this.peliculaUsuario.Actors === this.peliculaDelDia.Actors
+      pelicula.Actors === this.peliculaDelDia.Actors
     );
   }
 
-  coincideDirector(): boolean {
-    if (!this.peliculaUsuario || !this.peliculaDelDia) {
-      return false;
-    }
-    return (
-      this.peliculaUsuario.Director === this.peliculaDelDia.Director
-    );
+  coincideDirector(pelicula: any): boolean {
+
+    return (pelicula && this.peliculaDelDia && pelicula.Director === this.peliculaDelDia.Director)
+
   }
 }
   //PRACTICAR

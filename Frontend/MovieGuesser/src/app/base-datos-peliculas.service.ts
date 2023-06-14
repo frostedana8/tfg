@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BaseDatosPeliculasService {
-
+ //http://www.omdbapi.com/?i=tt3896198&apikey=feec4bd5
   private url:string="http://www.omdbapi.com";
   private apiKey:string="&apikey=feec4bd5";
 
@@ -31,15 +31,10 @@ export class BaseDatosPeliculasService {
 
   //esta es una funcion que tiene como parametro el valor/titulo introducido por el usuario
   //es un get que retorna los datos de la pelicula introducido por el usuario
-  getBusquedaPeliculaUsuario(busqueda:string):Observable<any>{
+  getBusquedaPeliculaUsuario(busqueda:string) {
 
-    this.http.get(this.url+"/?t="+ busqueda +this.apiKey).subscribe(
-      (data:any)=> {
-        this.peliculaUsuario = data
-        console.log(this.peliculaUsuario)
-      }
-    )
-    return this.peliculaUsuario
+    return this.http.get(this.url+"/?t="+ busqueda +this.apiKey).toPromise();
+
   }
 
   //si quiero enviar los datos al hijo tengo que hacer un get

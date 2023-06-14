@@ -5,19 +5,19 @@
 
   <div class="row">
     <div class="input-group mb-3">
-      <input type="text" #busqueda (keyup.enter)="getBusquedaPeliculaUsuario(busqueda.value)">
+      <input type="text" #busqueda (keyup.enter)="getBusquedaPeliculaUsuario(busqueda)">
       <button>Adivinar</button>
     </div>
   </div>
 
   <table class="table table-bordered">
 
-    <tbody *ngIf="getPeliculaUsuario()">
+    <tbody *ngFor="let pelicula of peliculaUsuario">
       <tr>
-        <td [ngClass]="{'color-verde': coincideGenero(), 'color-rojo': !coincideGenero()}">{{ getPeliculaUsuario()?.Genre }}</td>
-        <td [ngClass]="{'color-verde': coincideAnio(), 'color-rojo': !coincideAnio()}">{{ getPeliculaUsuario()?.Year }}</td>
-        <td [ngClass]="{'color-verde': coincideActores(), 'color-rojo': !coincideActores()}">{{ getPeliculaUsuario()?.Actors }}</td>
-        <td [ngClass]="{'color-verde': coincideDirector(), 'color-rojo': !coincideDirector()}">{{ getPeliculaUsuario()?.Director }}</td>
+        <td [ngClass]="{'color-verde': coincideGenero(pelicula), 'color-rojo': !coincideGenero(pelicula)}">{{ pelicula.Genre }}</td>
+        <td [ngClass]="{'color-verde': coincideAnio(pelicula), 'color-rojo': !coincideAnio(pelicula)}">{{ pelicula.Year }}</td>
+        <td [ngClass]="{'color-verde': coincideActores(pelicula), 'color-rojo': !coincideActores(pelicula)}">{{ pelicula.Actors }}</td>
+        <td [ngClass]="{'color-verde': coincideDirector(pelicula), 'color-rojo': !coincideDirector(pelicula)}">{{ pelicula.Director }}</td>
       </tr>
     </tbody>
   </table>
