@@ -1,0 +1,7 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720">
+	<title>Proyecto nuevo</title>
+	<style>
+		.s0 { paint-order:stroke fill markers;stroke: #ffffff;stroke-width: 54;stroke-linejoin: round;;fill: #000000 } 
+	</style>
+	<path id="MG" class="s0" aria-label="MG"  d="m27.2 209.5v312.5h64.1v-204.2h2.6l80.8 202.7h43.7l80.9-201.9h2.6v203.4h64.1v-312.5h-81.5l-86.1 209.9h-3.7l-86-209.9zm600.3 101h67.2c-8.6-61.8-63.1-105.3-133.7-105.3-82.6 0-146.2 59.5-146.2 160.8 0 98.9 59.5 160.3 147.5 160.3 78.9 0 135.3-49.9 135.3-132.2v-39.4h-130.8v49.8h67.1c-0.9 38.8-27.3 63.3-71.2 63.3-49.6 0-80.9-37.1-80.9-102.4 0-65 32.5-101.8 80.2-101.8 34.1 0 57.1 17.6 65.5 46.9z"/>
+</svg>
