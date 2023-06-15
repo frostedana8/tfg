@@ -10,11 +10,38 @@
     </div>
   </div>
 
-  <div class="container-fluid" style="width: 60%; ">
+
+  <div class="row">
+    <div class="input-group mb-3">
+      <input type="text" #busqueda (keyup.enter)="buscarPelicula(busqueda)">
+      <button (click)="buscarPelicula(busqueda)">Adivinar</button>
+      <button (click)="intentarDeNuevo()">Intentar de nuevo</button>
+    </div>
+    <small *ngIf="isError" class="text-danger">{{ errorMessage }}</small>
+  </div>
+
+  <div *ngIf="isLoading" class="spinner-border text-secondary ml-auto" role="status">
+    <span class="sr-only"></span>
+  </div>
+
+  <table class="table table-bordered">
+
+    <tbody *ngFor="let pelicula of peliculasBuscadas">
+      <tr>
+        <td [ngClass]="{'color-verde': coincideGenero(pelicula), 'color-rojo': !coincideGenero(pelicula)}">{{ pelicula.Genre }}</td>
+        <td [ngClass]="{'color-verde': coincideAnio(pelicula), 'color-rojo': !coincideAnio(pelicula)}">{{ pelicula.Year }}</td>
+        <td [ngClass]="{'color-verde': coincideActores(pelicula), 'color-rojo': !coincideActores(pelicula)}">{{ pelicula.Actors }}</td>
+        <td [ngClass]="{'color-verde': coincideDirector(pelicula), 'color-rojo': !coincideDirector(pelicula)}">{{ pelicula.Director }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+
+  <!--<div class="container-fluid" style="width: 60%; ">
       <div class="input-group mb-3" >
         <input type="text" class="form-control" placeholder="" >
         <button class="btn btn-primary input-group-text " id="basic-addon2" >Adivinar</button>
         <button class="btn btn-primary input-group-text" id="basic-addon2" style="background-color: #FA6666;">Rendirse</button>
       </div>
-  </div>
+  </div>-->
 </div>

@@ -11,7 +11,7 @@ import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service'
 export class DiarioComponent {
 
   protected peliculaUsuario:any;
-  private peliculaDelDia: any;
+  protected peliculaDelDia: any;
 
   //hago la conexion con el servicio
   constructor(private baseDatos:BaseDatosPeliculasService) {

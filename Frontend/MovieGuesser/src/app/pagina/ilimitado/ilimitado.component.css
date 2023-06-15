@@ -1,15 +1,29 @@
+input{
+  border-radius: 15px;
+  width: 80%;
+  text-align: center;
+}
+
 button{
   width: 20%;
   color: black;
-  font-size: 22px;
+  font-size: 20px;
   border-left: 3px solid black;
   border-radius: 0px 15px 15px 0px;
+  background-color: #70BFF9;
 }
+
 .input-group.mb-3{
   width: 100%;
-  border: 3px solid black;
-  border-radius: 17px;
+  display: flex;
+  justify-content: center;
 }
-input{
-  border-radius: 15px;
+
+
+.color-rojo{
+  background-color: red;
+}
+
+.color-verde{
+  background-color: green;
 }
