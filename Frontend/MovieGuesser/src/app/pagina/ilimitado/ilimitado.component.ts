@@ -24,6 +24,7 @@ export class IlimitadoComponent {
     let pelicula = this.peliculas[Math.floor(Math.random() * this.peliculas.length)]
     this.baseDatos.getPeliculaById(pelicula).then((response) => {
       this.peliculaIlimitado = response
+      console.log(response)
     });
   }
 
