@@ -17,6 +17,7 @@ export class IlimitadoComponent {
 
   constructor(private baseDatos:BaseDatosPeliculasService){
     this.peliculasBuscadas = []
+    this.getPeliculaAleatoria()
   };
 
   //numero aleatoria sobre la array de peliculas
@@ -57,6 +58,7 @@ export class IlimitadoComponent {
     })
   }
   coincideTitulo(pelicula: any): boolean {
+
     if (!pelicula || !this.peliculaIlimitado) {
       return false;
     }

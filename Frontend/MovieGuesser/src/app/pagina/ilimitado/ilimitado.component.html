@@ -14,8 +14,8 @@
   <div class="row">
     <div class="input-group mb-3">
       <input type="text" #busqueda (keyup.enter)="buscarPelicula(busqueda)">
-      <button>Adivinar</button>
-      <button style="background-color: rgb(255, 92, 92);" (click)="intentarDeNuevo()">Rendirse</button>
+      <button class="inline button">Adivinar</button>
+      <button class="inline red button" (click)="intentarDeNuevo()">Rendirse</button>
     </div>
   </div>
 

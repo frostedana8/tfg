@@ -1,6 +1,6 @@
 input{
   border-radius: 15px;
-  width: 80%;
+  width: 60%;
   text-align: center;
 }
 
@@ -11,6 +11,14 @@ button{
   border-left: 3px solid black;
   border-radius: 0px 15px 15px 0px;
   background-color: #70BFF9;
+}
+
+.inline.button {
+  display: inline;
+}
+
+.inline.red.button {
+  background-color: rgb(255, 92, 92);
 }
 
 .input-group.mb-3{

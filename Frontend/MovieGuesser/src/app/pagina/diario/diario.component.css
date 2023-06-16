@@ -34,7 +34,8 @@ button{
 } */
 input{
   border-radius: 15px;
-  width: 45%;
+  width: 80%;
+  text-align: center;
 }
 
 .green {
@@ -44,3 +45,5 @@ input{
 .red {
   background-color: #ffcccc;
 }
+
+
