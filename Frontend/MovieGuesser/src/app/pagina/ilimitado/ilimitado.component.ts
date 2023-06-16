@@ -55,7 +55,14 @@ export class IlimitadoComponent {
 
     })
   }
-
+  coincideTitulo(pelicula: any): boolean {
+    if (!pelicula || !this.peliculaIlimitado) {
+      return false;
+    }
+    return (
+      pelicula.Title === this.peliculaIlimitado.Title
+    );
+  }
 
   coincideGenero(pelicula: any): boolean {
     if (!pelicula || !this.peliculaIlimitado) {

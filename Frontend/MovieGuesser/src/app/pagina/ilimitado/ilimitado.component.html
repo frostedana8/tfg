@@ -6,7 +6,7 @@
     </div>
 
     <div class="row" >
-      <h6 style="text-align: right; width: 65%;" >Reto diario</h6>
+      <h6 style="text-align: right; width: 65%;" >Ilimitado</h6>
     </div>
   </div>
 
@@ -14,11 +14,11 @@
   <div class="row">
     <div class="input-group mb-3">
       <input type="text" #busqueda (keyup.enter)="buscarPelicula(busqueda)">
-      <button (click)="buscarPelicula(busqueda)">Adivinar</button>
-      <button (click)="intentarDeNuevo()">Intentar de nuevo</button>
+      <button>Adivinar</button>
+      <button style="background-color: rgb(255, 92, 92);" (click)="intentarDeNuevo()">Rendirse</button>
     </div>
-    <small *ngIf="isError" class="text-danger">{{ errorMessage }}</small>
   </div>
+
 
   <div *ngIf="isLoading" class="spinner-border text-secondary ml-auto" role="status">
     <span class="sr-only"></span>
@@ -28,6 +28,7 @@
 
     <tbody *ngFor="let pelicula of peliculasBuscadas">
       <tr>
+        <td [ngClass]="{'color-verde': coincideTitulo(pelicula), 'color-rojo': !coincideTitulo(pelicula)}">{{ pelicula.Title }}</td>
         <td [ngClass]="{'color-verde': coincideGenero(pelicula), 'color-rojo': !coincideGenero(pelicula)}">{{ pelicula.Genre }}</td>
         <td [ngClass]="{'color-verde': coincideAnio(pelicula), 'color-rojo': !coincideAnio(pelicula)}">{{ pelicula.Year }}</td>
         <td [ngClass]="{'color-verde': coincideActores(pelicula), 'color-rojo': !coincideActores(pelicula)}">{{ pelicula.Actors }}</td>

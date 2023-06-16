@@ -2,6 +2,9 @@
   <div class="row">
     <label for="inputTituloIntroducido" style="font-size: xx-large;">¡Adivina la película oculta!</label>
   </div><br>
+  <div class="row" >
+    <h6 style="text-align: right; width: 65%;" >Reto Diario</h6>
+  </div>
 
   <div class="row">
     <div class="input-group mb-3">
@@ -14,6 +17,7 @@
 
     <tbody *ngFor="let pelicula of peliculaUsuario">
       <tr>
+        <td [ngClass]="{'color-verde': coincideTitulo(pelicula), 'color-rojo': !coincideTitulo(pelicula)}">{{ pelicula.Title }}</td>
         <td [ngClass]="{'color-verde': coincideGenero(pelicula), 'color-rojo': !coincideGenero(pelicula)}">{{ pelicula.Genre }}</td>
         <td [ngClass]="{'color-verde': coincideAnio(pelicula), 'color-rojo': !coincideAnio(pelicula)}">{{ pelicula.Year }}</td>
         <td [ngClass]="{'color-verde': coincideActores(pelicula), 'color-rojo': !coincideActores(pelicula)}">{{ pelicula.Actors }}</td>

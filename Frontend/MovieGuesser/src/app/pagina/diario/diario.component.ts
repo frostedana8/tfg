@@ -37,6 +37,14 @@ export class DiarioComponent {
     this.peliculaDelDia = this.baseDatos.getPeliculaDelDia()
   }
 
+  coincideTitulo(pelicula: any): boolean {
+    if (!pelicula || !this.peliculaDelDia) {
+      return false;
+    }
+    return (
+      pelicula.Title === this.peliculaDelDia.Title
+    );
+  }
 
   coincideGenero(pelicula: any): boolean {
     if (!pelicula || !this.peliculaDelDia) {
