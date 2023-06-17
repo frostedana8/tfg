@@ -11,8 +11,8 @@ export class BaseDatosPeliculasService {
   private apiKey:string="&apikey=feec4bd5";
 
 
-  //la busqueda de la url para la pelicula de hoy, de titanic
-  private url2:string="https://www.omdbapi.com/?t=titanic&apikey=feec4bd5";
+  //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
+  private url2:string="http://localhost:3000/peliculaById";
 
   //la pelicula del dia
   private peliculaDelDia: any;
@@ -38,7 +38,7 @@ export class BaseDatosPeliculasService {
   }
 
 
-  
+
 
   //si quiero enviar los datos al hijo tengo que hacer un get
   getPeliculaUsuario(){return this.peliculaUsuario}
