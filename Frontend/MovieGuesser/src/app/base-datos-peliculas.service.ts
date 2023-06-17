@@ -12,7 +12,7 @@ export class BaseDatosPeliculasService {
 
 
   //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
-  private url2:string="http://localhost:3000/peliculaById";
+  private url2:string="http://backend:3000/peliculaById";
 
   //la pelicula del dia
   private peliculaDelDia: any;

@@ -1,7 +1,7 @@
 const mysql = require("mysql2");
   
 let db_con  = mysql.createConnection({
-    host: "localhost",
+    host: "http://db:3306",
     user: "root",
     password: 'root',
     database: 'db'
@@ -9,9 +9,9 @@ let db_con  = mysql.createConnection({
   
 db_con.connect((err) => {
     if (err) {
-      console.log("Database Connection Failed !!!", err);
+      console.log("Error de conexión", err);
     } else {
-      console.log("connected to Database");
+      console.log("Conexión correcta");
     }
 });
   
