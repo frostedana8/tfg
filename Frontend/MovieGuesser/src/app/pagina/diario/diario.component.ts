@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service';
+import { PeliculasFecha } from 'src/app/services/api';
 //import { FormsModule } from '@angular/forms';
 
 
@@ -14,7 +15,7 @@ export class DiarioComponent {
   protected peliculaDelDia: any;
 
   //hago la conexion con el servicio
-  constructor(private baseDatos:BaseDatosPeliculasService) {
+  constructor(private baseDatos:BaseDatosPeliculasService, private peliculasFecha: PeliculasFecha) {
     this.peliculaUsuario = []
   }
 
