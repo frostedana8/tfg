@@ -32,7 +32,7 @@ import { Configuration }                                     from '../configurat
 })
 export class PeliculasFechaService {
 
-    protected basePath = 'http://localhost';
+    protected basePath = 'http://backend';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
