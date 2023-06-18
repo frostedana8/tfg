@@ -14,9 +14,10 @@
   <div class="row">
     <div class="input-group mb-3">
       <input type="text" #busqueda (keyup.enter)="buscarPelicula(busqueda)">
-      <button class="inline button">Adivinar</button>
-      <button class="inline red button" (click)="intentarDeNuevo()">Rendirse</button>
+      <button class="inline button" (click)="buscarPelicula(busqueda)">Adivinar</button>
+      <button class="inline red button" (click)="intentarDeNuevo()">Intentar de nuevo</button>
     </div>
+    <small *ngIf="isError" class="text-danger">{{ errorMessage }}</small>
   </div>
 
 

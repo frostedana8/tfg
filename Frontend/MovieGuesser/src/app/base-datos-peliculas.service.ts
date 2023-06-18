@@ -12,21 +12,19 @@ export class BaseDatosPeliculasService {
 
 
   //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
-  private url2:string="http://localhost:3000/peliculaById";
+  private url2:string="http://localhost:3000/peliculaById"; //cambiar este por el backend del octeto?
 
   //la pelicula del dia
   private peliculaDelDia: any;
   private peliculaUsuario: any;
 
-  constructor(private http:HttpClient) {
-    this.http.get(this.url2).subscribe( (respuesta:any)=> {
-      this.peliculaDelDia=respuesta
-      console.log(this.peliculaDelDia)
-    })
-  }
+  constructor(private http:HttpClient) {  }
 
-  getPeliculaDelDia(){
-    return this.peliculaDelDia
+  //esta me devuelve el objeto en si, se usa la misma en el diario y en el ilimitado
+  getPeliculaAleatoria(){
+
+    return this.http.get(this.url2).toPromise();
+
   }
 
   //esta es una funcion que tiene como parametro el valor/titulo introducido por el usuario
@@ -38,18 +36,8 @@ export class BaseDatosPeliculasService {
   }
 
 
-
-
   //si quiero enviar los datos al hijo tengo que hacer un get
   getPeliculaUsuario(){return this.peliculaUsuario}
-
-  //componente ilimitado
-
-  //hace la busqueda por id, se lo trae desde el comp. ilimitado
-  getPeliculaById( idPelicula:string) {
-    return this.http.get(this.url+"/?i="+ idPelicula +this.apiKey).toPromise();
-  }
-
 
 
 }

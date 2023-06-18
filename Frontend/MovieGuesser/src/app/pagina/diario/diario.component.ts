@@ -12,29 +12,54 @@ export class DiarioComponent {
 
   protected peliculaUsuario:any;
   protected peliculaDelDia: any;
+  protected isLoading: boolean = false;
+  protected isError: boolean = false;
+  protected errorMessage: string = "";
+
+
 
   //hago la conexion con el servicio
   constructor(private baseDatos:BaseDatosPeliculasService) {
     this.peliculaUsuario = []
+    this.getPeliculaAleatoria()
   }
 
+  //este método es equivalente a buscarPelicula del ilimitado
   getBusquedaPeliculaUsuario(busqueda:any) {
+    this.isError= false;
+    this.isLoading = true;
 
-    if (!this.peliculaDelDia) {
-      this.getPeliculaDelDia()
+    //corregir el error, si no hay nada o esta vacío el input
+    if (!busqueda.value || busqueda.value.trim() == "") {
+      this.isLoading = false;
+      this.isError= true;
+      this.errorMessage = "Tienes que introducir una película";
+      busqueda.value = "";
+      return
     }
 
-    this.baseDatos.getBusquedaPeliculaUsuario(busqueda.value).then((response) => {
-      this.peliculaUsuario.push(response)
+    this.baseDatos.getBusquedaPeliculaUsuario(busqueda.value).then((response: any) => {
+      this.isLoading = false
+
+      //corregir el error, si la pelicula no existe en la base de datos, por motivos de traduccion de peliculas, en inglés
+      if (response.Response == "False") {
+        this.errorMessage = "No existe la pelicula '"+busqueda.value+"' en nuestra base de datos";
+        this.isError= true;
+      }
+      else {
+        this.peliculaUsuario.push(response)
+      }
+
+
+      busqueda.value = "";
     });
-
-    busqueda.value = ""
-
   }
 
   //la pelicula del dia
-  getPeliculaDelDia(){
-    this.peliculaDelDia = this.baseDatos.getPeliculaDelDia()
+  getPeliculaAleatoria(){
+    this.baseDatos.getPeliculaAleatoria().then((response) => {
+      this.peliculaDelDia = response
+    })
   }
 
   coincideTitulo(pelicula: any): boolean {

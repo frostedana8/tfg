@@ -8,7 +8,7 @@ import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service'
 })
 export class IlimitadoComponent {
 
-  private peliculas :Array<string> = ["tt0111161", "tt0068646","tt0468569", "tt0071562", "tt0050083", "tt0108052", "tt0167260", "tt0110912", "tt0120737", "tt0060196"]
+
   protected peliculaIlimitado: any
   protected peliculasBuscadas: any
   protected isLoading: boolean = false;
@@ -20,15 +20,16 @@ export class IlimitadoComponent {
     this.getPeliculaAleatoria()
   };
 
-  //numero aleatoria sobre la array de peliculas
-  getPeliculaAleatoria() {
-    let pelicula = this.peliculas[Math.floor(Math.random() * this.peliculas.length)]
-    this.baseDatos.getPeliculaById(pelicula).then((response) => {
-      this.peliculaIlimitado = response
+  getPeliculaAleatoria(){
+
+    this.baseDatos.getPeliculaAleatoria().then((response) => {
+      this.peliculaIlimitado = response;
       console.log(response)
-    });
+    })
+
   }
 
+  //este método es equivalente a getBusquedaPeliculaUsuario del diario
   buscarPelicula(busqueda: any) {
     this.isError= false;
     this.isLoading = true
@@ -103,7 +104,8 @@ export class IlimitadoComponent {
   intentarDeNuevo() {
     this.getPeliculaAleatoria();
 
-    this.isError = false;
+    this.isError = true;
+    this.errorMessage = "Vaya la pelicula era tal";
     this.isLoading = false;
     this.peliculasBuscadas = [];
   }

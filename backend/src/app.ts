@@ -12,12 +12,9 @@ const port = 3000;
 const url:string="https://www.omdbapi.com/?i=tt";
 const apiKey:string="&apikey=feec4bd5";
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
 app.get('/peliculaById', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'http://localhost:51621');
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //cambiar del localhost al puerto que me proporciona frontend al lanzar el comando ng serve si son cambios en el local, pero si es en okteto es diferente, tiene que ser el de octeto
 
     //escojo la pelicula aleatoria
     const filaPelicula = Math.floor(Math.random() * 3);
