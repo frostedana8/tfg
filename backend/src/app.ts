@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/peliculaById', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'http://frontend:51621');
+    res.set('Access-Control-Allow-Origin', 'http://localhost:51621');
 
     //escojo la pelicula aleatoria
     const filaPelicula = Math.floor(Math.random() * 3);
@@ -41,5 +41,5 @@ app.get('/peliculaById', (req, res) => {
 
 
 app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
+  return console.log(`Escuchando en (puerto) http://localhost:${port}`);
 });
