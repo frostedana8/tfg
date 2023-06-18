@@ -38,5 +38,5 @@ app.get('/peliculaById', (req, res) => {
 
 
 app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
+  return console.log(`Escuchando en (puerto) http://localhost:${port}`);
 });
