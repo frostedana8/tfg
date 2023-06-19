@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/peliculaById', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); 
+    res.set('Access-Control-Allow-Origin', '*'); 
 
     //escojo la pelicula aleatoria
     const filaPelicula = Math.floor(Math.random() * 3);
@@ -127,9 +127,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/peliculaById', (req, res) => {
-
-    res.set('Access-Control-Allow-Methods', 'GET');
-    res.set('Access-Control-Allow-Origin', frontendURL);
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //cambiar del localhost al puerto que me proporciona frontend al lanzar el comando ng serve si son cambios en el local, pero si es en okteto es diferente, tiene que ser el de octeto
 
     //escojo la pelicula aleatoria
     const filaPelicula = Math.floor(Math.random() * 3);
@@ -429,5 +427,5 @@ app.post('/logout', autenticarTokenJWT, (req, res) => {
 
 
 app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-}); */
+  return console.log(`Escuchando en (puerto) http://localhost:${port}`);
+});

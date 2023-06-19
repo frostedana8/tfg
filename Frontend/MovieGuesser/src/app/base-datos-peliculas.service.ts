@@ -19,7 +19,12 @@ export class BaseDatosPeliculasService {
   private url2:string="http://localhost:3000/peliculaById";                                   //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
   private backendUrl: string = "http://localhost:3000";                                       //comentar  ya no me sirve sin el registro
 
-  private peliculaDelDia: any;                                                                    //la pelicula del dia
+
+  //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
+  private url2:string="http://backend:3000/peliculaById"; //cambiar este por el backend del octeto?
+
+  //la pelicula del dia
+  private peliculaDelDia: any;
   private peliculaUsuario: any;
 
   constructor(private http:HttpClient) {
