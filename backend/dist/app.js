@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 app.get('/peliculaById', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'http://frontend:51621');
+    res.set('Access-Control-Allow-Origin', '*');
     //escojo la pelicula aleatoria
     const filaPelicula = Math.floor(Math.random() * 3);
     //uso el objeto database que lo tengo en otro archivo que me hace la conexion y luego la consulta
@@ -42,6 +42,6 @@ app.get('/peliculaById', (req, res) => {
     });
 });
 app.listen(port, () => {
-    return console.log(`Express is listening at http://localhost:${port}`);
+    return console.log(`Express is listening at http://backend:${port}`);
 });
 //# sourceMappingURL=app.js.map
