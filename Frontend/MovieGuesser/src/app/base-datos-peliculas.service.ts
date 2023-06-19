@@ -16,7 +16,7 @@ export class BaseDatosPeliculasService {
 
   private url:string="https://www.omdbapi.com";                                               //http://www.omdbapi.com/?i=tt3896198&apikey=feec4bd5
   private apiKey:string="&apikey=feec4bd5";
-  private url2:string="http://localhost:3000/peliculaById";                                   //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
+  //private url2:string="http://localhost:3000/peliculaById";                                   //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
   private backendUrl: string = "http://localhost:3000";                                       //comentar  ya no me sirve sin el registro
 
 
