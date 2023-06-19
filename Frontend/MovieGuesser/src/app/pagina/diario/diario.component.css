@@ -1,9 +1,13 @@
 .color-rojo{
-  background-color: red;
+  background-color: #E35047;
 }
 
 .color-verde{
-  background-color: rgb(0, 168, 0);
+  background-color: #7BB662;
+}
+
+.color-naranja {
+  background-color: #FFD301;
 }
 
 button{
@@ -15,35 +19,64 @@ button{
   background-color: #70BFF9;
 }
 
-.input-group.mb-3{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-
-.row{
-  display: flex;
-  justify-content: center;
-}
-
-/* .input-group.mb-3{
-  width: 100%;
-  border: 3px solid black;
-  border-radius: 17px;
-} */
 input{
   border-radius: 15px;
   width: 80%;
   text-align: center;
 }
 
-.green {
-  background-color: #c4ffc4;
+.input-group.mb-3{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.red {
-  background-color: #ffcccc;
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .container {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .container {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1200px){
+  .container {
+    font-size: 14px;
+  }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .input-group.mb-3{
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 17px;
+} */
