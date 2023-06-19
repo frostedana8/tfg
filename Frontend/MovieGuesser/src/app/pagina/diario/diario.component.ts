@@ -16,20 +16,20 @@ export class DiarioComponent {
   protected isError: boolean = false;
   protected errorMessage: string = "";
 
-
-
-  //hago la conexion con el servicio
+//hago la conexion con el servicio
   constructor(private baseDatos:BaseDatosPeliculasService) {
     this.peliculaUsuario = []
-    this.getPeliculaAleatoria()
   }
 
-  //este método es equivalente a buscarPelicula del ilimitado
   getBusquedaPeliculaUsuario(busqueda:any) {
-    this.isError= false;
-    this.isLoading = true;
 
-    //corregir el error, si no hay nada o esta vacío el input
+    this.isLoading = true;
+    this.isError = false;
+
+    if (!this.peliculaDelDia) {
+      this.getPeliculaDelDia()
+    }
+
     if (!busqueda.value || busqueda.value.trim() == "") {
       this.isLoading = false;
       this.isError= true;
@@ -41,8 +41,8 @@ export class DiarioComponent {
     this.baseDatos.getBusquedaPeliculaUsuario(busqueda.value).then((response: any) => {
       this.isLoading = false
 
-      //corregir el error, si la pelicula no existe en la base de datos, por motivos de traduccion de peliculas, en inglés
-      if (response.Response == "False") {
+
+      if (response.Response == "False") {                                                               //corregir el error, si la pelicula no existe en la base de datos, por motivos de traduccion de peliculas, en inglés
         this.errorMessage = "No existe la pelicula '"+busqueda.value+"' en nuestra base de datos";
         this.isError= true;
       }
@@ -50,34 +50,53 @@ export class DiarioComponent {
         this.peliculaUsuario.push(response)
       }
 
-
-      busqueda.value = "";
+      busqueda.value = ""
     });
   }
 
-  //la pelicula del dia
-  getPeliculaAleatoria(){
-    this.baseDatos.getPeliculaAleatoria().then((response) => {
-      this.peliculaDelDia = response
-    })
+//la pelicula del dia
+  getPeliculaDelDia(){
+    this.peliculaDelDia = this.baseDatos.getPeliculaDelDia()
   }
 
   coincideTitulo(pelicula: any): boolean {
     if (!pelicula || !this.peliculaDelDia) {
       return false;
     }
+
     return (
       pelicula.Title === this.peliculaDelDia.Title
     );
   }
 
-  coincideGenero(pelicula: any): boolean {
+  coincideGenero(pelicula: any): string {
     if (!pelicula || !this.peliculaDelDia) {
-      return false;
+      return "incorrecto";
     }
-    return (
-      pelicula.Genre === this.peliculaDelDia.Genre
-    );
+
+    else if (pelicula.Genre === this.peliculaDelDia.Genre) {
+      return "correcto"
+    }
+
+    else {
+      let peliculaGeneros = pelicula.Genre.split(',');
+      let peliculaDiaGeneros = this.peliculaDelDia.Genre.split(',');
+      let encontrado = false;
+
+      for (var i = 0; i < peliculaGeneros.length; i++) {
+
+        for (var j = 0; j < peliculaDiaGeneros.length; j++) {
+          if (peliculaDiaGeneros[j].trim().toUpperCase() == peliculaGeneros[i].trim().toUpperCase()) {
+            encontrado = true;
+          }
+        }
+      }
+
+      if (encontrado) return "parcial";
+      else return "incorrecto";
+    }
+
+
   }
 
   coincideAnio(pelicula: any): boolean {
@@ -89,13 +108,33 @@ export class DiarioComponent {
     );
   }
 
-  coincideActores(pelicula: any): boolean {
+  coincideActores(pelicula: any): string {
+
     if (!pelicula || !this.peliculaDelDia) {
-      return false;
+      return "incorrecto";
     }
-    return (
-      pelicula.Actors === this.peliculaDelDia.Actors
-    );
+
+    else if (pelicula.Actors === this.peliculaDelDia.Actors) {
+      return "correcto"
+    }
+
+    else {
+      let peliculaGeneros = pelicula.Actors.split(',');
+      let peliculaDiaGeneros = this.peliculaDelDia.Actors.split(',');
+      let encontrado = false;
+
+      for (var i = 0; i < peliculaGeneros.length; i++) {
+
+        for (var j = 0; j < peliculaDiaGeneros.length; j++) {
+          if (peliculaDiaGeneros[j].trim().toUpperCase() == peliculaGeneros[i].trim().toUpperCase()) {
+            encontrado = true;
+          }
+        }
+      }
+
+      if (encontrado) return "parcial";
+      else return "incorrecto";
+    }
   }
 
   coincideDirector(pelicula: any): boolean {

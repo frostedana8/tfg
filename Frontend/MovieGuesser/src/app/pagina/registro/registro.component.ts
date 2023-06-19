@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,4 +8,38 @@ import { Component } from '@angular/core';
 })
 export class RegistroComponent {
 
+  protected isError: boolean = false;
+  protected errors: any;
+  protected usuario: string;
+  protected email: string;
+  protected password: string;
+  protected password_confirmation: string;
+
+  constructor(private baseDatos:BaseDatosPeliculasService) {
+    this.usuario = "";
+    this.email = "";
+    this.password = "";
+    this.password_confirmation = "";
+  }
+
+  public registerUser() {
+
+    this.isError = false;
+  
+    this.baseDatos.registerUser(this.usuario, this.email, this.password, this.password_confirmation)
+      .then((response: any) => {
+
+      console.log(response);
+
+      if (response.errors) {
+        this.isError = true;
+        this.errors = response.errors;
+      }
+      else {
+        document.cookie = `token=${response}`;
+      }
+      
+    });
+
+  }
 }

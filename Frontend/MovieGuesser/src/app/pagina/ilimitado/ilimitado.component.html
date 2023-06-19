@@ -30,9 +30,9 @@
     <tbody *ngFor="let pelicula of peliculasBuscadas">
       <tr>
         <td [ngClass]="{'color-verde': coincideTitulo(pelicula), 'color-rojo': !coincideTitulo(pelicula)}">{{ pelicula.Title }}</td>
-        <td [ngClass]="{'color-verde': coincideGenero(pelicula), 'color-rojo': !coincideGenero(pelicula)}">{{ pelicula.Genre }}</td>
+        <td [ngClass]="{'color-verde': coincideGenero(pelicula) == 'correcto', 'color-rojo': coincideGenero(pelicula) == 'incorrecto', 'color-naranja': coincideGenero(pelicula) == 'parcial'}">{{ pelicula.Genre }}</td>
         <td [ngClass]="{'color-verde': coincideAnio(pelicula), 'color-rojo': !coincideAnio(pelicula)}">{{ pelicula.Year }}</td>
-        <td [ngClass]="{'color-verde': coincideActores(pelicula), 'color-rojo': !coincideActores(pelicula)}">{{ pelicula.Actors }}</td>
+        <td [ngClass]="{'color-verde': coincideActores(pelicula) == 'correcto', 'color-rojo': coincideActores(pelicula) == 'incorrecto', 'color-naranja': coincideActores(pelicula) == 'parcial'}">{{ pelicula.Actors }}</td>
         <td [ngClass]="{'color-verde': coincideDirector(pelicula), 'color-rojo': !coincideDirector(pelicula)}">{{ pelicula.Director }}</td>
       </tr>
     </tbody>
