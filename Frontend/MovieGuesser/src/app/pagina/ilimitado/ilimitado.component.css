@@ -13,7 +13,7 @@
 button{
   width: 20%;
   color: black;
-  font-size: 20px;
+  font-size: 1rem;
   border-left: 3px solid black;
   border-radius: 0px 15px 15px 0px;
   background-color: #70BFF9;
