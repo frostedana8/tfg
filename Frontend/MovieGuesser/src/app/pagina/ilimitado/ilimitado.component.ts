@@ -14,6 +14,7 @@ export class IlimitadoComponent {
   protected isLoading: boolean = false;
   protected isError: boolean = false;
   protected errorMessage: string = "";
+  protected ganaste: boolean = false;
 
   constructor(private baseDatos:BaseDatosPeliculasService){
     this.peliculasBuscadas = []
@@ -29,35 +30,57 @@ export class IlimitadoComponent {
     });
   }
 
+  //buscamos la pelicula que ha introducido el usuario
   buscarPelicula(busqueda: any) {
     this.isError= false;
     this.isLoading = true
 
+    //corregimos los errores
     if (!busqueda.value || busqueda.value.trim() == "") {
       this.isLoading = false;
       this.isError= true;
-      this.errorMessage = "Tienes que introducir una película";
+      this.errorMessage = "* Tienes que introducir una película";
       busqueda.value = "";
       return
     }
 
+    //nos traemos la pelicula del servicio
     this.baseDatos.getBusquedaPeliculaUsuario(busqueda.value).then((response: any) => {
 
       this.isLoading = false
 
       if (response.Response == "False") {
-        this.errorMessage = "No existe la pelicula '"+busqueda.value+"' en nuestra base de datos";
+        this.errorMessage = " * No existe la pelicula '"+busqueda.value+"' en nuestra base de datos";
         this.isError= true;
       }
       else {
+        //agrega response (la respuesta de la película encontrada) a la array de peliculasBuscadas
         this.peliculasBuscadas.push(response)
       }
 
-      busqueda.value = "";
+      const ultimaPelicula = this.peliculasBuscadas[this.peliculasBuscadas.length - 1];
+        if (this.coincidePeliculaCompleta(ultimaPelicula)) {
+          this.ganaste = true;
+        }
 
+      busqueda.value = "";
 
     })
   }
+
+  coincidePeliculaCompleta(pelicula: any): boolean {
+    if (!pelicula || !this.peliculaIlimitado) {
+      return false;
+    }
+
+    return (
+      pelicula.Title === this.peliculaIlimitado.Title &&
+      pelicula.Genre === this.peliculaIlimitado.Genre &&
+      pelicula.Year === this.peliculaIlimitado.Year &&
+      pelicula.Director === this.peliculaIlimitado.Director
+    );
+  }
+
   coincideTitulo(pelicula: any): boolean {
 
     if (!pelicula || !this.peliculaIlimitado) {
@@ -94,8 +117,6 @@ export class IlimitadoComponent {
       if (encontrado) return "parcial";
       else return "incorrecto";
     }
-
-
   }
 
   coincideAnio(pelicula: any): boolean {
@@ -145,11 +166,12 @@ export class IlimitadoComponent {
   intentarDeNuevo() {
     this.getPeliculaAleatoria();
 
+
     this.isError = false;
     this.isLoading = false;
     this.peliculasBuscadas = [];
   }
 
-
+  
   }
 
