@@ -15,6 +15,7 @@ export class IlimitadoComponent {
   protected isError: boolean = false;
   protected errorMessage: string = "";
   protected ganaste: boolean = false;
+  protected disableTextbox = false;
 
   constructor(private baseDatos:BaseDatosPeliculasService){
     this.peliculasBuscadas = []
@@ -27,6 +28,7 @@ export class IlimitadoComponent {
     this.baseDatos.getPeliculaById(pelicula).then((response) => {
       this.peliculaIlimitado = response
       console.log(response)
+      this.disableTextbox = false;
     });
   }
 
@@ -86,9 +88,11 @@ export class IlimitadoComponent {
     if (!pelicula || !this.peliculaIlimitado) {
       return false;
     }
-    return (
-      pelicula.Title === this.peliculaIlimitado.Title
-    );
+    if(pelicula.Title === this.peliculaIlimitado.Title){
+      this.disableTextbox = true;
+      return true;
+    }
+    else return false
   }
 
   coincideGenero(pelicula: any): string {

@@ -18,9 +18,7 @@ const database = require('./database/mysqlconnection');
 const port = 3000;
 const url = "https://www.omdbapi.com/?i=tt";
 const apiKey = "&apikey=feec4bd5";
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+
 app.get('/peliculaById', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
     //escojo la pelicula aleatoria

@@ -15,6 +15,7 @@ export class DiarioComponent {
   protected isLoading: boolean = false;
   protected isError: boolean = false;
   protected errorMessage: string = "";
+  protected disableTextbox = false;
 
 //hago la conexion con el servicio
   constructor(private baseDatos:BaseDatosPeliculasService) {
@@ -64,9 +65,11 @@ export class DiarioComponent {
       return false;
     }
 
-    return (
-      pelicula.Title === this.peliculaDelDia.Title
-    );
+    if(pelicula.Title === this.peliculaDelDia.Title) {
+      this.disableTextbox = true;
+      return true;
+    }
+    else return false;
   }
 
   coincideGenero(pelicula: any): string {

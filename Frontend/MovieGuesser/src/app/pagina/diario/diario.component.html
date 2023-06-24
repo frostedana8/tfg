@@ -12,7 +12,7 @@
 
   <div class="row">
     <div class="input-group mb-3">
-      <input type="text" #busqueda (keyup.enter)="getBusquedaPeliculaUsuario(busqueda)">
+      <input [disabled]='disableTextbox' type="text" #busqueda (keyup.enter)="getBusquedaPeliculaUsuario(busqueda)">
       <button (click)="getBusquedaPeliculaUsuario(busqueda)">Adivinar</button>
     </div>
     <small *ngIf="isError" class="text-danger">{{ errorMessage }}</small>
