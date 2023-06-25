@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { BaseDatosPeliculasService } from 'src/app/base-datos-peliculas.service'
 })
 export class RegistroComponent {
 
+
+  //el registro con el backend de node.js
   protected isError: boolean = false;
   protected errors: any;
   protected usuario: string;
@@ -25,7 +28,7 @@ export class RegistroComponent {
   public registerUser() {
 
     this.isError = false;
-  
+
     this.baseDatos.registerUser(this.usuario, this.email, this.password, this.password_confirmation)
       .then((response: any) => {
 
@@ -38,7 +41,7 @@ export class RegistroComponent {
       else {
         document.cookie = `token=${response}`;
       }
-      
+
     });
 
   }

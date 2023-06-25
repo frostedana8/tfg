@@ -14,7 +14,7 @@ export class IlimitadoComponent {
   protected isLoading: boolean = false;
   protected isError: boolean = false;
   protected errorMessage: string = "";
-  protected ganaste: boolean = false;
+  
 
   constructor(private baseDatos:BaseDatosPeliculasService){
     this.peliculasBuscadas = []
@@ -58,28 +58,12 @@ export class IlimitadoComponent {
         this.peliculasBuscadas.push(response)
       }
 
-      const ultimaPelicula = this.peliculasBuscadas[this.peliculasBuscadas.length - 1];
-        if (this.coincidePeliculaCompleta(ultimaPelicula)) {
-          this.ganaste = true;
-        }
 
       busqueda.value = "";
 
     })
   }
 
-  coincidePeliculaCompleta(pelicula: any): boolean {
-    if (!pelicula || !this.peliculaIlimitado) {
-      return false;
-    }
-
-    return (
-      pelicula.Title === this.peliculaIlimitado.Title &&
-      pelicula.Genre === this.peliculaIlimitado.Genre &&
-      pelicula.Year === this.peliculaIlimitado.Year &&
-      pelicula.Director === this.peliculaIlimitado.Director
-    );
-  }
 
   coincideTitulo(pelicula: any): boolean {
 
@@ -163,6 +147,8 @@ export class IlimitadoComponent {
 
   }
 
+
+
   intentarDeNuevo() {
     this.getPeliculaAleatoria();
 
@@ -172,6 +158,6 @@ export class IlimitadoComponent {
     this.peliculasBuscadas = [];
   }
 
-  
+
   }
 
