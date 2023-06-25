@@ -7,9 +7,7 @@ const port = 3000;
 const url:string="https://www.omdbapi.com/?i=tt";
 const apiKey:string="&apikey=feec4bd5";
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+
 
 app.get('/peliculaById', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*'); 
@@ -429,3 +427,4 @@ app.post('/logout', autenticarTokenJWT, (req, res) => {
 app.listen(port, () => {
   return console.log(`Escuchando en (puerto) http://localhost:${port}`);
 });
+*/

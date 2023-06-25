@@ -21,17 +21,26 @@ export class BaseDatosPeliculasService {
 
 
   //la busqueda de la url para la pelicula de hoy, lo tengo que coger del backend
-  private url2:string="/peliculaById"; //cambiar este por el backend del octeto?
+  private urlIlimitado:string="/peliculaById"; //cambiar este por el backend del octeto?
+  private urlHoy="/peliculaHoy"; //pelicula de hoy
 
   //la pelicula del dia
+  private peliculaIlimitado: any;
   private peliculaDelDia: any;
   private peliculaUsuario: any;
 
   constructor(private http:HttpClient) {
-    this.http.get(this.url2).subscribe( (respuesta:any)=> {
-      this.peliculaDelDia=respuesta
-      //console.log(this.peliculaDelDia)
+    this.http.get(this.urlIlimitado).subscribe( (respuesta:any)=> {
+      this.peliculaIlimitado=respuesta
+      //console.log(this.peliculaIlimitado)
     })
+    this.http.get(this.urlHoy).subscribe( (respuesta:any)=> {
+      this.peliculaDelDia=respuesta
+    })
+  }
+
+  getpeliculaIlimitado(){
+    return this.peliculaIlimitado
   }
 
   getPeliculaDelDia(){
